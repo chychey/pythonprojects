@@ -1,54 +1,75 @@
-class User:
-    #define the attributes of the class
-    name = "no name provided"
-    email = ""
-    password = "123"
-    account = 0
+#parent class
+class Organism:
+    name = "Unknown"
+    species = "Unknown"
+    legs = None
+    arms = None
+    dna = "Sequence A"
+    origin = "Unknown"
+    carbon_based = True
 
-    #Define the methods of the class
-    def login(self):
-        entry_email = input("Enter your email: ")
-        entry_password = input("Enter your password: ")
-        if (entry_email == self.email and entry_password == self.password):
-            print("Welcome back, {}".format(self.name))
-        else:
-            print("You are not authorized for this page.")
-#Outside of the class you would create an instance of the User class
-new_user = User()
-#Call the login method using the new object
-new_user.login()
+    def information(self):
+        msg = "\nName: ()\nSpecies: ()\nLegs: ()\nArms: ()\nDNA: ()\nOrigin: ()\nCarbon Based: ()".format(self.name,self.species,self.legs,self.arms,self.dna,self.origin,self.carbon_based)
+        return msg
+# child class instance
+class Human(Organism):
+    name = 'MacGuyver'
+    species = 'Homosapien'
+    legs = 2
+    arms = 2
+    origin = 'Earth'
 
-class User:
-    name = 'No name provided'
-    email = ' '
-    password = '123'
-    account_number = 0
+    def ingenuity(self):
+        msg = "\nCreates a deadly weapon using only a paper clip, chewing gum, and a roll of duct tape!"
+        return msg
+
+    
+#another child class instance
+class Dog(Organism):
+    name = "Spot"
+    species = 'Canine'
+    legs = 4
+    arms = 0
+    dna = "Sequence B"
+    origin = 'Earth'
+
+    def bite(self):
+        msg = "\nEmits a loud, menacing growl and bites down ferociously on its target!"
+        return msg
+
+# another child class instance
+class Bacterium(Organism):
+    name = 'X'
+    species = 'Bacteria'
+    legs = 0
+    arms = 0
+    dna = "Sequence C"
+    origin = 'Mars'
+
+    def replication(self):
+        msg = "\nThe cells begin to to divide and multiply into two seperate organisms!"
+        return msg
+
+     
 
 
-class Employee(User):
-    base_pay = 15.00
-    department = 'General'
-
-class Customer(User):
-    mailing_address = ' '
-    mailing_list = True
 
 
 
 
+if __name__ == "__main__":
+    human = Human()
+    print(human.information())
+    print(human.ingenuity())
 
 
+    dog = Dog()
+    print(dog.information())
+    print(dog.bite())
+
+    bacteria = Bacterium()
+    print(bacteria.information())
+    print(bacteria.replication())
 
 
-
-
-
-
-
-
-
-def __init__(self, name, email, password, account):
-    self.name = name
-    self.email = email
-    self.password = password
-    self.account = account
+    
