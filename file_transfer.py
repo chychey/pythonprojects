@@ -18,10 +18,10 @@ class ParentWindow(Frame):
         #positions the exit button
         self.exit_btn.grid(row=2, column=2, padx=(10, 40), pady=(0, 15))
 
-        
+
 #creates function to select source directory.
-def sourceDir(self):
-    selectSourceDir = tkinter.filedialog.askdirectory()
+    def sourceDir(self):
+      selectSourceDir = tkinter.filedialog.askdirectory()
     #the .delete (0, end) will clear the content that is inserted in the entry widget,
     #this allows the path to be inserted into the Entry widget properly.
     self.source_dir.delete(0, END)
@@ -31,28 +31,30 @@ def sourceDir(self):
     self.sourceDir_btn = Button(text="Select Source", width=20, command=self.sourceDir)
     #Creates function to select destination directory.
     def destDir(self):
-        selectDestDir= tkinter.filedialog.askdirectory()
+      selectDestDir= tkinter.filedialog.askdirectory()
         #the. delete (0,end) will clear the content that is inserted in the Entry widget,
         #this allows the path to be inserted into the Entry widget properly.
-        self.destination_dir.delete(0, END)
+    self.destination_dir.delete(0, END)
         #the .insert method will insert the user selection to the destination_dir Entry widget
-        self.destination_dir.insert(0, selectDestDir)
+    self.destination_dir.insert(0, selectDestDir)
     #creates function to transfer files from one directory to another
-        def transferFiles(self):
+    def transferFiles(self):
             #gets source directory
-            source = self.source_dir.get()
+     source = self.source_dir.get()
             #gets destination directory
-            destination = self.destination_dir.get()
+    destination = self.destination_dir.get()
             #gets a list of files in the source directory
-            for i in source_files:
+for i in source_files:
                 #moves each file from the source to the destination
-                shutil.move(source + '/' + i, destination)
-                print(i + ' was successfully transferred.')
+            shutil.move(source + '/' + i, destination)
+            print(i + ' was successfully transferred.')
             #creates function to exit program
-                def exit_program(self):
+            from datetime import datetime
+datetime.now().isoformat(timespec='minutes') 
+def exit_program(self):
                     #root is the main GUI window, the tkinter destroy method
                     #tells python to terminate root.mainloop and all widgets inside the GUI window
-                    root.destroy()
+        root.destroy()
 
 
 
