@@ -1,10 +1,9 @@
-from django.http import HttpResponse
 from django.shortcuts import render
+from django.http import HttpResponse
+from . import views
 
 
-def home(request):
-    products = ["cherries", "Apples", "oranges", "Strawberries", "Pears", "Watermelons" ]
-    context = {
-        'products': products
-    }
-    return render(request, "home.html", context)
+
+def admin_console(request):
+
+    return render(request, 'products/products_page.html')
