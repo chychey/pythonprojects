@@ -2,9 +2,16 @@
 
 {% block title %}Royal Hotels{% endblock %}
 
-{% block header %}Welocme to the Royal Hotels!{% endblock %}
+{% block header %}Welcome to the Royal Hotels!{% endblock %}
 
 {% block content %}
+
+{% for product in products %}
+   <ul>
+       <li>{( product )}</li>
+   </ul>
+
+{% endfor %}
 
 
 {% endblock %}
