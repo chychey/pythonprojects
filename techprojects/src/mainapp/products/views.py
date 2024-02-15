@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .forms import ProductForm
 from .models import Product
@@ -9,7 +9,7 @@ def admin_console(request):
 
 def details(request, pk):
     pk = int(pk)
-    form = get_object_or_404(Product, pk=pk)
+    item = get_object_or_404(Product, pk=pk)
     form = ProductForm(data=request.POST or None, instance=item)
     if request.method == 'POST':
         if form.is_valid():
