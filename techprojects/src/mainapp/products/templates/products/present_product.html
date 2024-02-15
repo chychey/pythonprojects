@@ -2,6 +2,8 @@
 
 {% block title %}Royals Hotels{% endblock %)
 
+{% block header %}Product Deatails:(% endblock %}
+
 {% block content %}
 
 
@@ -14,12 +16,12 @@
            {{ form.as_table }}
        </table>
     <div class="frmBtn_container">
-    <ul>
-        <li><a href="../{{ form.pk }}delete/">DELETE</a></li>
-        <li><a href="{% url 'admin_console' %}">CANCLE</a></li>
-
-            </ul>
-
+        <input type="submit">
+        <div class="frmBtn_container">
+            <li><a href="../{{ form.pk }}delete/">DELETE</a></li>
+            <li><a href="{% url 'admin_console' %}"><button class="btn">CANCLE</button></a></li>
+        
+             </div>
         </div>
     </form>
 </div>
