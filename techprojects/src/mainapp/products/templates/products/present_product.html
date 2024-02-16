@@ -1,8 +1,8 @@
-{% extends "base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Royals Hotels{% endblock %)
+{% block title %}Royals Hotels{% endblock %}
 
-{% block header %}Product Deatails:(% endblock %}
+{% block header %}Product Deatails:{% endblock %}
 
 {% block content %}
 
@@ -12,14 +12,14 @@
     <form name="productForm" method="POST" action="../details/">
        <table>
            {% csrf_token %}
-           {{ form.non_field_errors }}
-           {{ form.as_table }}
+           {( form.non_field_errors )}
+           {( form.as_table )}
        </table>
     <div class="frmBtn_container">
         <input type="submit">
         <div class="frmBtn_container">
-            <li><a href="../{{ form.pk }}delete/">DELETE</a></li>
-            <li><a href="{% url 'admin_console' %}"><button class="btn">CANCLE</button></a></li>
+            <a href="../{{ form.pk }}delete/"><button class="btn">DELETE</a>
+            <a href="{% url 'admin_console' %}"><button class="btn">CANCLE</button></a>
         
              </div>
         </div>
