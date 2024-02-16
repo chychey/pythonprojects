@@ -12,13 +12,13 @@
     <form name="productForm" method="POST" action="../details/">
        <table>
            {% csrf_token %}
-           {( form.non_field_errors )}
-           {( form.as_table )}
+           {{ form.non_field_errors }}
+           {{ form.as_table }}
        </table>
     <div class="frmBtn_container">
         <input type="submit">
         <div class="frmBtn_container">
-            <a href="../{{ form.pk }}delete/"><button class="btn">DELETE</a>
+            <a href="../{{ form.pk }}delete/"><button class="btn">DELETE</button></a>
             <a href="{% url 'admin_console' %}"><button class="btn">CANCLE</button></a>
         
              </div>

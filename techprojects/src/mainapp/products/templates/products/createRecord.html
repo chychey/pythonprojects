@@ -12,8 +12,8 @@
     <form method="POST" action="{% url 'createRecord' %}">
         <div class="frmObject_container">
             {% csrf_token %}
-            {( form.non_field_errors )}
-            {( form.as_p )}
+            {{ form.non_field_errors }}
+            {{ form.as_p }}
         </div>
         <div class="frmBtn_container">
             <input type="submit" class="btn" value="Create New Product" name="Save_item">
